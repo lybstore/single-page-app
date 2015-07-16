@@ -1,0 +1,52 @@
+  <header>
+    <a href="#/home" title="Lyb Store"></a>
+    <article ng-click="mainNavMenu()">
+      <i></i>
+      <p>Menu</p>
+    </article>
+  </header>
+
+<section ng-include="'./app/partials/nav-menu.html'"></section>
+<main class="store-items-container">
+  
+  <section ng-repeat="productObject in store">
+    <div>
+      <img ng-src="{{productObject.image}}" title="{{productObject.image}}" alt="{{productObject.image}}">
+      
+      <article>
+
+        <figure>
+              <figcaption>
+                <h2>{{productObject.productTitle}}</h2>
+                <p>{{productObject.productDesc}}</p>
+            </figcaption>
+            <ul>
+              <li>
+                <a href="#" ng-click="likeItBtn()">
+                  <span class="item-button like-btn"></span>
+                  <p>Go for it</p>
+                </a>
+              </li>
+
+               <li>
+                <a href="#/view">
+                  <span class="item-button view-btn"></span>
+                  <p>View</p>
+                </a>
+              </li>
+
+               <li>
+                <a href="#" ng-click="shareBtn()">
+                  <span class="item-button share-btn"></span>
+                  <p>share</p>
+                </a>
+              </li>
+            </ul>
+        </figure>
+
+      </article>
+      </div>
+    </section>
+  <section ng-include="'./app/partials/footer.html'"></section>
+</main>
+

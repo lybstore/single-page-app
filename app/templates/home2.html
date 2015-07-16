@@ -1,0 +1,46 @@
+<section ng-include="'./app/partials/nav-menu.html'"></section>
+<span ng-class="{lightouts: siteBlackout}"></span>
+
+
+<section class="items__container">
+ <div ng-repeat="productObject in itemEntry">
+	<div class="item">
+          <img ng-src="{{productObject.image}}">
+          <div class="item-overlay">
+            <footer>
+                  <div class="item-top-title">
+                    <h2>{{productObject.productTitle}}</h2>
+                    <p class="subdescription">{{productObject.productDesc}}</p>
+                    <div class="item__stats"></div>
+                  </div>
+              <ul>
+              <li>
+                <a>
+                 <div class="item-button item__goForIt" ng-click="likeItBtn()">
+                  <span class="item-button__likeBtn"></span>
+                  <p>Go for it</p>
+                 </div>
+               </a>
+             </li>
+              <li>
+                <a href="#/view">
+                  <div class="item-button item__chart">
+                    <span class="item-button__viewBtn"></span>
+                       <p class="item-button__viewBtn-copy">View</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a>
+                  <div class="item-button item__share">
+                    <span class="item-button__shareBtn"></span>
+                    <p>Share</p>
+                  </div>
+                </a>
+              </li>
+          </ul>
+            </footer>
+          </div>
+    </div>
+</div>
+</section>

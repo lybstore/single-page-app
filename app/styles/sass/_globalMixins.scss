@@ -1,0 +1,251 @@
+// FONT COLORS 
+
+$paletteYellow: #ffdd4c;
+$paletteWhite: #fff;
+$paletteGrey: #999;
+
+// 
+
+// FONT SIZES 
+
+$defualt-title-size: 0.75em;
+$default-sub-heading: 1.2em;
+
+
+// PADDINGS 
+
+$nav-block-padding: 0.25em;
+
+
+
+// SELECT 
+
+@mixin none-select { user-select: none; }
+
+// MARGINS 
+
+@mixin under-header { top: 60px; }
+@mixin right-hidden { right: -40em; }
+
+@mixin reset { margin: 0; padding: 0; }
+
+// POSTIONING 
+
+@mixin absolute { position: absolute; }
+@mixin relative { position: relative; }
+@mixin fixed { position: fixed; }
+@mixin left { float: left; }
+@mixin right { float: right; }
+@mixin center-txt { text-align: center; }
+
+// FONTS 
+
+@mixin body-font { font-family: 'open sans', helvetica, sans-serif; }
+@mixin nav-font-size { font-size: 12px;  font-weight: 600; }
+
+// DISPLAY ELEMENST
+
+@mixin block { display: block; }
+@mixin inline-block { display: inline-block; }
+@mixin inline { display: inline; }
+
+// Z-INDEX 
+
+@mixin z-index-00 { z-index: -10; }
+@mixin z-index-0 { z-index: 10; }
+@mixin z-index-1 { z-index: 100; }
+@mixin z-index-2 { z-index: 200; }
+@mixin z-index-3 { z-index: 300; }
+@mixin z-index-4 { z-index: 400; }
+@mixin z-index-5 { z-index: 500; }
+@mixin z-index-6 { z-index: 600; }
+@mixin z-index-7 { z-index: 700; }
+@mixin z-index-8 { z-index: 800; }
+@mixin z-index-9 { z-index: 900; }
+
+// BORDERS 
+
+@mixin border-bottom-nav { border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
+@mixin dotted-border { border-bottom: 1px dotted #555; }
+@mixin top-dotted-border { border-top: 1px dotted #555; }
+
+
+// PROFILE BORDER RADIUS 
+
+@mixin image-radius { border-radius: 50px; }
+@mixin widget-radius { border-top-left-radius: 3px; border-top-right-radius: 3px;  }
+
+
+// SHADOWS 
+
+@mixin global-box-shadow { box-shadow: 0 0 25px rgba(0, 0, 0, .35); }
+@mixin widget-box-shadow { box-shadow: 0 0 25px rgba(0, 0, 0, 1); }
+
+// STORE BLOCK COLORS 
+
+@mixin block-bg { background-color: rgba(0, 0, 0, 0.7); }
+@mixin footer-bg { background: rgba(0, 0, 0, 0.7); }
+@mixin transparent-bg { background: rgba(255,255,255,.3); }
+
+// HOVER TRANSITIONS 
+
+@mixin global-transition { transition: all 0.3s ease-in; }
+@mixin hover-color-fill { background-color: rgba(255, 255, 255, 0.1); }
+@mixin pointer { cursor: pointer; }
+
+
+// WIDGET SIZES 
+
+@mixin widget-container { width: 320px; height: auto; }
+
+@mixin widget-elements {
+
+  @include widget-container;
+  @include block-bg;
+  @include absolute;
+  @include global-transition;
+  @include z-index-00;
+  @include widget-radius;
+  color: $paletteYellow;
+
+}
+
+// NAV BAR 
+
+@mixin main-nav{
+  
+  @include block;
+  @include block-bg;
+  @include global-box-shadow;
+  font-family: $oswald;
+  font-size: 0.75em; 
+  text-align: center;
+  font-weight: 200;
+  color: $navLinkColor;
+  padding: $nav-block-padding;
+}
+
+
+
+
+
+// OLD CODE 
+
+@mixin noMargins ($noMeasureMent){
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+@mixin box-sizing($box-sizing){  
+    -moz-box-sizing:border-box;
+    -webkit-box-sizing:border-box;
+    box-sizing:border-box;
+}
+
+@mixin StoreShare($storeIcons){ 
+    display: inline-block;
+    height: 34px;
+    width: 34px;
+}
+
+@mixin fontCta($letterGothic){
+  font-family: $oswald;
+  font-size: 19px;
+  color: #fff799;
+  font-weight: 600;
+}
+
+@mixin callToActionBtns(){
+  font-size:13px;
+  padding-top:5px;
+  color: #fff;
+}
+
+@mixin StoreIcons($storeIcons){
+  display: block;
+  height: 20px;
+  width: 20px;
+  margin: 0 auto;
+}
+
+
+@mixin toolTipBg($toolTip){ 
+  position: absolute;
+  background-color: #fff;
+  display: block;
+  //@include border-radius(3px);
+  box-shadow: 0px -5px 50px 0px rgba(0,0,0,.1);
+  width: 230px;
+  height: 270px;
+  text-align: center;
+  top: 135px;
+  right: 157px;
+  //@include transition(all 0.1s ease-in);
+  z-index: 800;
+}
+
+@mixin toolTipTopTriangle($topTriangle){    
+  top: -12px;
+  left: 46%;
+  border-right: 10px solid transparent;
+  border-bottom: 20px solid #FFF;
+  border-left: 10px solid transparent;
+  z-index: -9;
+}
+
+@mixin menuIcons($MenuBarIcons){
+  display: block;
+  width: 25px;
+  height: 25px;
+  margin: 9px auto;
+}
+
+@mixin input-seachIcon($input-seachIcon){
+  display: block;
+  width: 15px;
+  height: 15px;
+  margin: 0;
+}
+
+@mixin footerIcons{
+  display: block;
+  width: 25px;
+  height: 25px;
+  margin: 0 auto 0.35em;
+}
+
+@mixin productView-font($productView-font){
+  font-family: $bodyFont;
+  font-weight: 900;
+  color: #4f4f4f;
+}
+
+@mixin crumbtrails-font($crumbTrails){
+  font-size: 13px;
+  font-weight: 200;
+  letter-spacing: 2px;
+}
+
+@mixin product-item-overlay{
+  position: absolute;
+  background: linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 38%, rgba(0,0,0,0.58) 100%);
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+@mixin product-item-blur($storeIcons){
+   filter: blur(3px);
+}
+
+@mixin closeSpin($storeIcons){
+  transform: rotate(0deg);
+  //@include transition(all 0.3s ease-in);
+  &:hover{
+    transform: rotate(90deg);
+    //@include transition(all 0.3s ease-in);
+  }
+}
+
+

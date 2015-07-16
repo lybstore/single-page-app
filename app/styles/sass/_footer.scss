@@ -1,0 +1,302 @@
+.footer-nav {
+	@include fixed;
+	@include z-index-2;
+	@include body-font;
+	@include footer-bg;
+	@include none-select;
+	width: 100%;
+	bottom: 0;
+	height: 4.23em;
+	padding: $nav-block-padding;
+
+	figure {
+		@include absolute;
+		@include z-index-0;
+		@include global-transition;
+		color: $White;
+		top: 0.50em;
+		left: 0.75em;
+		
+		img { 
+			@include image-radius;
+			@include left;
+			@include inline-block;
+			height: 50px;
+		}
+
+		figcaption { 
+			margin: 1em 0.75em;
+			@include left;
+			font-weight: 600;
+		}	
+	}
+
+	nav {
+		@include inline-block;
+		@include right;
+		margin-right: 0.65em;
+		margin-bottom: 0.25em;
+
+		ul {
+			background-color: transparent !important;
+		}
+
+		li {
+			@include center-txt;
+			@include nav-font-size;
+			margin: 0em 0.75em 0;
+			color: $navLinkColor;
+			width: auto !important;
+
+			a { 
+		        &:before { 
+		          content: ''; 
+		          @include footerIcons; 
+		        }
+
+	       		&.profile:before { background-image: url('/./lyb/app/images/profile-icon.svg'); }
+	       		&.item-menu:before { background-image: url('/./lyb/app/images/items-icon.svg'); }
+	        	&.like-items:before { background-image: url('/./lyb/app/images/favorite-icon.svg'); }
+	        	&.followers:before { background-image: url('/./lyb/app/images/followers-icon.svg'); }
+	        	&.following:before { background-image: url('/./lyb/app/images/following-icon.svg'); }
+      		}
+    	}
+	}
+  }
+
+
+// GONE-FOR-IT-WIDGET 
+
+.item-widget-container {
+  @include widget-elements;
+  bottom: -30em;
+  left: 50%;
+  opacity: 0;
+
+  &:hover { color: $paletteWhite; }
+
+  .like-items {
+  	@include inline-block;
+  	width: 100%;
+  	margin-top:0.75em;
+
+  	&:before { content: ''; @include footerIcons; }
+  	&.like-items:before { background-image: url('/./lyb/app/images/favorite-icon-hover.svg'); }
+  }
+
+  figure { 
+
+    @include relative;
+    box-shadow: 0 0 rgba(0,0,0,0);
+    left: 0;
+    top: 0;
+    
+    img { margin-top: 0.30em; }
+    figcaption { @include inline-block; float: none; }
+
+  }
+ 
+  ul li {
+      @include dotted-border;
+      @include block;
+      padding: 0.5em 0.75em;
+      font-size: $defualt-title-size;
+	  
+	  &:first-child { @include top-dotted-border; }
+	  &:last-child { border-bottom: none; }
+      &:hover { @include transparent-bg; }
+    }
+    a {
+      color: $paletteYellow;
+
+      &:hover { @include global-transition; color: $paletteWhite; } 
+    }
+
+    p { margin-top: 5px; }
+
+  	@include breakpoint((max-width: 760px)) { left: 34%; }
+  	@include breakpoint((max-width: 700px)) { left: 33%; }
+  	@include breakpoint((max-width: 640px)) { left: 30%; }
+  	@include breakpoint((max-width: 600px)) { left: 30%; }
+  	@include breakpoint((max-width: 560px)) { left: 25%; }
+  	@include breakpoint((max-width: 520px)) { left: 20%; }
+  	@include breakpoint((max-width: 450px)) { left: 19%; }
+  	@include breakpoint((max-width: 400px)) { left: 11%; } 
+}
+
+.itemsWrapper { bottom: 71px; opacity: 1; } // ANGULAR CLASS
+
+
+
+
+
+/*.footerBar__container{
+	position: fixed;
+	z-index: 99;
+	bottom: 0px;
+	font-family: $oswald;
+	color: $navLinkColor;
+	padding: 5px 0px;
+}
+
+.footerBar__container_inner{	
+	position: fixed;
+	bottom: -59px;
+	right: 0px;
+	left: 0px;
+	z-index: 80;
+	height: 68px;
+	transition: all  0.3s ease-out;
+	box-shadow: 0 0 25px rgba(0, 0, 0, .35);
+}
+
+.footBar__userName{
+	padding: 28px 10px 0 !important;
+}
+
+.footerRiseLow{
+	bottom: 0px;
+	transition: all 0.3s ease-in;
+}
+
+.footerRiseHigh{
+	height: 410px;
+}
+
+.footBar__img{
+	display: inline-block;
+	float: left;
+	border-radius: 50px;
+	height: 50px;
+	margin-top: 9px;
+	margin-left: 26px;
+}
+
+.footerBar__btn{
+	background-image: url('/./lyb/app/images/down-arrow.svg');
+	font-size: 15px;
+	right: 4px;
+	top: 7px;
+	height: 30px;
+	width: 30px;
+	position: absolute;
+}
+
+.footerBar__inner{
+	background-color: rgba(0, 0, 0, 1);
+	position: relative;
+	display: inline-block;
+	width: 100%;
+	img{
+		display: inline-block;
+		float: left;
+	}
+	p{
+		color: #fff;
+		display: inline-block;
+		font-weight: 600;
+		padding-top: 5px;
+		@media screen and (max-width: 470px){
+			font-size: 9px;
+		}
+	}
+}
+
+.footerBar__listed-items{
+	display: inline-block;
+	float: right;
+	font-size: 11px;
+	margin: 0px 15px 0px 0px;
+	font-weight: 600;
+	li{
+		display: inline-block;
+		height: 60px;
+		text-align: center;
+		margin: 12px 8px 0px;
+		@media screen and (min-width: 600px) and (max-width: 745px) {
+		  width: 13%;	
+		}
+		@media screen and (min-width: 530px) and (max-width: 600px){
+		  width: 12%;
+		}
+		@media screen and (min-width: 470px ) and (max-width: 530px){
+			margin: 12px 12px 0px;
+		}
+		@media screen and (min-width: 350px) and (max-width: 470px){
+			margin: 12px 10px 0px;
+		}
+		@media screen and (max-width: 350px){
+			margin: 12px 3px 0px;
+		}
+	}
+	a{
+		color: #fff;
+	}
+	@media screen and (max-width: 745px) {
+		float: none;
+		width: 100%;
+	}
+}
+
+@media screen and (min-width: 420px) and (max-width: 745px) {
+	.footerBar__listed-items li:first-child{
+	  	margin-left: 18px;
+	}
+}
+
+@media screen and (min-width: 320px) and (max-width: 420px){
+	.footerBar__listed-items li:first-child{
+	  	margin-left: 15px;
+	}
+}
+
+.followers-icon{
+	background-image: url('/./lyb/app/images/followers-icon.svg');
+	@include footerIcons($footerBarIcons);
+}
+
+.followering-icon{
+	background-image: url('/./lyb/app/images/following-icon.svg');
+	@include footerIcons($footerBarIcons);
+}
+
+.items-icon{
+	background-image: url('/./lyb/app/images/items-icon.svg');
+	@include footerIcons($footerBarIcons);
+}
+
+.profile-icon{
+	background-image: url('/./lyb/app/images/profile-icon.svg');
+	@include footerIcons($footerBarIcons);
+}
+
+.settings-icon{
+	background-image: url('/./lyb/app/images/settings-icon.svg');
+	@include footerIcons($footerBarIcons);
+}
+
+.likeit-icon{
+	background-image: url('/./lyb/app/images/favorite-icon.svg');
+	@include footerIcons($footerBarIcons);
+}
+
+.notification-icon{
+	background-image: url('/./lyb/app/images/notification-icon.svg');
+	@include footerIcons($footerBarIcons);
+}
+
+.logOut-icon{
+	background-image: url('/./lyb/app/images/logout-icon.svg');
+	@include footerIcons($footerBarIcons);
+}
+
+
+.footerBar__avatar{
+	width: 50px;
+	height: 50px;
+	position: relative;
+	@media screen and (max-width: 745px) {
+		display: none;
+	}
+}*/
+

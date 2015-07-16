@@ -1,0 +1,26 @@
+<div class="likeItBar__container"> 
+	
+	<div class="likeItBar__btm">
+		
+
+		<div class="like-widget__container">
+			<div class="like-widget-icon-listed widget-col l-widget-blocks" ng-repeat="productObject in itemEntry | limitTo: 12">
+				<span class="likeIt__closeBtn"></span>
+				<a class="like-widget-icon" href=""> 
+					<div class="like-widget-icon__content-holder">
+						<img class="newItem" ng-src="{{productObject.image}}">
+					</div>
+					
+					<div class="likeIt-icon__content-holder widget-larger-section">
+	              		<div class="likeIt-widget-title">
+				            <h2>{{productObject.productTitle}}</h2>
+				            <p class="subdescription">{{productObject.productDesc}}</p>
+	                 </div>
+	                </div>
+				</a>
+			</div>
+		</div>
+		 
+	</div>
+
+</div>

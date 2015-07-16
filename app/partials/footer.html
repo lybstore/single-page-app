@@ -1,0 +1,103 @@
+<section class="footer-nav">
+  
+ 
+    <article ng-class="{'footerRiseLow': midRaise, 'footerRiseHigh': highRaise}">
+
+      <figure>
+        <img src="./app/images/avatar.jpg" title="profile name">
+        <figcaption>
+          <p>Nate Knows</p>
+        </figcaption>
+      </figure>
+
+      <nav>
+        <ul>
+
+          <li>
+            <a class="profile" href="#/profile">
+              <p>Profile</p>
+            </a>
+          </li>
+
+          <li>
+            <a class="item-menu" href="#/itemMenu">
+              <p>Lists</p>
+            </a>
+         </li>
+
+         <li ng-click="likeItems()">
+            <a class="like-items">
+              <p>Gone for it</p>
+            </a>
+         </li>
+
+         <li>
+            <a class="followers" href="#/followers">
+              <p>Followers</p>
+            </a>
+         </li>
+
+          <li>
+            <a class="following" href="#/followers">
+              <p>Following</p>
+            </a>
+         </li>
+          
+        </ul>
+      </nav>
+
+    </article>
+
+
+
+
+<!-- WIDGETS -->
+
+<article ng-class="{itemsWrapper: itemsVisble}" class="item-widget-container">
+
+  <i class="like-items"></i>
+      
+    <ul>
+      <li ng-repeat="productObject in store | limitTo: 4">
+        <a href="">
+         <figure>
+            <img class="newItem" title="" ng-src="{{productObject.image}}">
+            <figcaption>
+              <h2>{{productObject.productTitle}}</h2>
+              <p>{{productObject.productDesc}}</p>
+            </figcaption>
+          </figure>
+        </a>
+      </li>
+    </ul>
+       
+</article>
+
+</section>
+
+
+
+
+<!-- <article ng-class="{itemsWrapper: itemsVisble}" class="item-widget__container">
+      
+    <ul>
+      <li class="item-widget-icon-listed" ng-repeat="productObject in store | limitTo: 4">
+        <a class="item-widget-icon" href="">
+          <div class="widget-icone__content-holder">
+            <img class="newItem" ng-src="{{productObject.image}}">
+          </div>
+          
+          <div class="widget-icone__content-holder widget-larger-section">
+              <div class="item-widget-title">
+                  <h2>{{productObject.productTitle}}</h2>
+                    <p class="subdescription">{{productObject.productDesc}}</p>
+              </div>
+          </div>
+        </a>
+      </li>
+    </ul>
+       
+</article> -->
+
+
+
